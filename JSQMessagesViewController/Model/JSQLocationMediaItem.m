@@ -99,7 +99,7 @@
     
     MKMapSnapshotter *snapShotter = [[MKMapSnapshotter alloc] initWithOptions:options];
     
-    [snapShotter startWithQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+    [snapShotter startWithQueue:dispatch_get_main_queue()
               completionHandler:^(MKMapSnapshot *snapshot, NSError *error) {
                   if (snapshot == nil) {
                       NSLog(@"%s Error creating map snapshot: %@", __PRETTY_FUNCTION__, error);
